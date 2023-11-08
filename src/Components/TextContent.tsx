@@ -1,13 +1,22 @@
-type description = {
-  data: { name: string; date: string; title: string; mainText: string };
+import React from "react";
+
+type Description = {
+  data: {
+    name: string;
+    date: string;
+    title: string;
+    mainText: string;
+  };
 };
 
-export default function TextContent(parameter: description) {
+const TextContent: React.FC<Description> = ({ data }) => {
   return (
     <div>
-      <h3>{parameter.data.title}</h3>
-      <p className="text-content">{parameter.data.mainText}</p>
+      <h3>{data.title}</h3>
+      <p className="text-content">{data.mainText}</p>
       <p className="readMore">Read more...</p>
     </div>
   );
-}
+};
+
+export default TextContent;

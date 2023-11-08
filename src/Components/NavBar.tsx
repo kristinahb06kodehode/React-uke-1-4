@@ -1,25 +1,29 @@
-export default function NavBar() {
+import React from "react";
+
+const NavBar: React.FC = () => {
   return (
-    <div>
+    <div className="header">
       <header className="navbar">
         <div className="logoCircle"></div>
         <nav>
           <ul>
             <li>
-              <a href="">Home</a>
+              <a href="/">Home</a>
             </li>
             <li>
-              <a href="">About</a>
+              <a href="/about">About</a>
             </li>
             <li>
-              <a href="">Contact</a>
+              <a href="/contact">Contact</a>
             </li>
             <li>
-              <a href="">Trending</a>
+              <a href="/trending">Trending</a>
             </li>
           </ul>
         </nav>
       </header>
     </div>
   );
-}
+};
+
+export default NavBar;

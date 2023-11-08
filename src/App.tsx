@@ -1,12 +1,13 @@
 import "./App.css";
 import NavBar from "./Components/NavBar.tsx";
-import SearchBar from "./Components/SearchBar.tsx";
 import UserDetails from "./Components/UserDetails.tsx";
 import TextContent from "./Components/TextContent.tsx";
-import GithubIcon from "./Components/GithubIcon.tsx";
+import GithubIcon from "./Components/svg/GithubIcon.tsx";
 import { details } from "./Card.ts";
+import SearchBar from "./Components/SearchBar.tsx";
+import Button from "./Components/Button.tsx";
 
-function App() {
+const App = () => {
   return (
     <div className="app">
       <NavBar />
@@ -19,7 +20,10 @@ function App() {
       {details.map((parameter) => {
         return (
           <section>
-            <UserDetails data={parameter} />
+            <div className="user-descrip">
+              <UserDetails data={parameter} />
+              <Button />
+            </div>
             <TextContent data={parameter} />
           </section>
         );
@@ -31,6 +35,6 @@ function App() {
       </footer>
     </div>
   );
-}
+};
 
 export default App;

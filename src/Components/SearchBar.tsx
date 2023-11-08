@@ -1,4 +1,6 @@
-export default function SearchBar() {
+import React from "react";
+
+const SearchBar: React.FC = () => {
   return (
     <div>
       <form action="">
@@ -19,4 +21,6 @@ export default function SearchBar() {
       </form>
     </div>
   );
-}
+};
+
+export default SearchBar;

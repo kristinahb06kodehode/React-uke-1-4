@@ -4,45 +4,59 @@
   padding: 0;
 }
 
-.app {
+#root {
+  height: 100vh;
+  width: 100%;
+  background-color: #f5ecf0;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
-  margin-top: 2px;
-  margin-bottom: 2px;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 
-main {
-  background-color: #f5ecf0;
+.app {
   display: flex;
   flex-direction: column;
+  width: 100%;
   align-items: center;
+  justify-content: stretch;
 }
 
-header {
-  height: 70px;
-  width: 430px;
-  background-color: rgb(200, 73, 124);
-  color: rgba(255, 251, 235, 1);
-  padding: 50px;
-  display: inline-flex;
-  flex-direction: row;
+.header {
+  display: flex;
   justify-content: space-between;
   align-items: center;
+  height: 200px;
+  width: 100%;
+  background-color: rgb(200, 73, 124);
+  color: rgba(255, 251, 235, 1);
+  padding: 0 50px;
+  margin-bottom: 20px;
 }
 
-li {
-  display: inline-flex;
-  margin: 5px;
+.navbar {
+  margin-top: 50px;
+  display: flex;
+  align-items: center;
+}
+
+nav ul {
   list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  align-items: center;
 }
 
+li,
 a {
+  margin: 0 10px;
   color: rgba(255, 251, 235, 1);
   text-decoration: none;
+  font-size: 24px;
+  margin-left: 40px;
 }
+
 .logoCircle {
   height: 50px;
   width: 50px;
@@ -60,13 +74,13 @@ a {
   font-size: 10px;
   margin-top: 8px;
 }
+
 h1 {
   text-align: center;
-  font-size: 48px;
+  font-size: 60px;
   font-weight: 400;
   color: rgb(86, 19, 46);
   background-color: #f5ecf0;
-  width: 430px;
 }
 
 h3 {
@@ -80,18 +94,21 @@ h3 {
 }
 
 input {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   border-radius: 10px;
   border: 1px solid rgb(200, 73, 124);
-  width: 330px;
   margin-top: 10px;
   background-color: #e9bdd1;
   height: 30px;
   text-align: center;
+  width: 500px;
 }
 
 .search-btn {
   position: absolute;
-  top: 17.6%;
+  top: 20.1%;
   height: 30px;
   border-radius: 10px;
   width: 40px;
@@ -101,26 +118,24 @@ input {
 .searchIcon {
   height: 25px;
   width: 20px;
-  margin-left: 0;
 }
+
 section {
-  display: inline-flex;
+  display: inline;
   flex-direction: column;
-  width: 430px;
-  padding: 10px 0;
+  align-items: start;
+  justify-content: center;
+  width: 65%;
+  padding: 10px;
+  margin: 20px;
   background-color: #f5ecf0;
+  border-bottom: rgb(200, 73, 124) 1px solid;
 }
 
-.userInf {
+.user-descrip {
   display: inline-flex;
+  justify-content: stretch;
   align-items: center;
-  justify-content: space-between;
-  text-align: center;
-}
-
-.userDetails {
-  display: inline-flex;
-  justify-content: space-between;
 }
 
 button {
@@ -128,32 +143,29 @@ button {
   color: rgb(200, 73, 124);
   border-radius: 4px;
   border: 1px solid rgb(200, 73, 124);
-  display: flex;
-  justify-content: center;
-  align-items: center;
   gap: 5px;
   width: 78px;
   height: 25px;
+  display: inline;
+  margin-left: 1000px;
 }
 
 h4 {
   color: #ce538e;
   font-size: 20px;
   font-weight: 400;
-  margin-left: 5px;
 }
+
 .circle {
   background-color: rgb(200, 73, 124);
   width: 25px;
   height: 25px;
   border-radius: 50%;
-  margin-left: 0;
-  margin-right: 5px;
 }
 
 footer {
   background-color: rgb(200, 73, 124);
-  width: 430px;
+  width: 100%;
   height: 10vh;
   color: rgba(217, 217, 217, 1);
   display: flex;

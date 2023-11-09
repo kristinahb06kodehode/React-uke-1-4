@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { TechPeople } from "./Components/FilterableList/moredata.tsx";
-
+import { TechPeople } from "./moredata.tsx";
 interface Person {
   name: string;
   date: string;

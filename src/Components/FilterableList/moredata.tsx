@@ -1,5 +1,3 @@
-import React from "react";
-
 export const TechPeople: Array<{
   name: string;
   date: string;

@@ -1,22 +1,27 @@
 import React from "react";
+import UserDetailsData from "./UserDetails";
+import TextContent from "./TextContent";
 
-interface Data {
-  id: number;
+export type UserDetailsData = {
+  name: string;
+  date: string;
   title: string;
-  body: string;
-}
+  mainText: string;
+};
 
 interface DataDisplayProps {
-  data: Data | null;
+  data: { userDetails?: UserDetailsData; textContent?: UserDetailsData };
 }
 
 const DataDisplay: React.FC<DataDisplayProps> = ({ data }) => {
+  if (!data.userDetails || !data.textContent) {
+    return null;
+  }
+
   return (
     <div>
-      <h1>Data</h1>
-      <p>ID: {data?.id}</p>
-      <p>Title: {data?.title}</p>
-      <p>Body: {data?.body}</p>
+      <UserDetailsData data={data.userDetails} />
+      <TextContent data={data.textContent} />
     </div>
   );
 };

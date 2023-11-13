@@ -1,3 +1,5 @@
+// ./Components/svg/HeartIcon.tsx
+
 export default function HeartIcon() {
   return (
     <div>

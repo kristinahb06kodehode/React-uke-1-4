@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { TechPeople } from "./moredata.tsx";
+
 interface Person {
   name: string;
   date: string;
@@ -7,21 +8,21 @@ interface Person {
   mainText: string;
 }
 
-const Filter: React.FC = () => {
-  const [filter, setFilter] = useState<string>("");
+const FilterableList: React.FC = () => {
+  const [filterValue, setFilterValue] = useState<string>("");
   const [filteredPeople, setFilteredPeople] = useState<Person[]>(TechPeople);
 
   const handleFilterChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const filterValue = e.target.value;
-    setFilter(filterValue);
+    setFilterValue(filterValue);
   };
 
   useEffect(() => {
     const filtered = TechPeople.filter((person: Person) =>
-      person.name.toLowerCase().includes(filter.toLowerCase())
+      person.name.toLowerCase().includes(filterValue.toLowerCase())
     );
     setFilteredPeople(filtered);
-  }, [filter]);
+  }, [filterValue]);
 
   return (
     <div>
@@ -29,7 +30,7 @@ const Filter: React.FC = () => {
         className="input-field"
         type="text"
         placeholder="Search..."
-        value={filter}
+        value={filterValue}
         onChange={handleFilterChange}
       />
       <ul>
@@ -46,4 +47,4 @@ const Filter: React.FC = () => {
   );
 };
 
-export default Filter;
+export default FilterableList;

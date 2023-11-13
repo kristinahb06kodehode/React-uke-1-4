@@ -1,13 +1,22 @@
+// App.tsx
 import "./App.css";
-import NavBar from "./Components/NavBar.tsx";
-import UserDetails from "./Components/UserDetails.tsx";
-import TextContent from "./Components/TextContent.tsx";
-import GithubIcon from "./Components/svg/GithubIcon.tsx";
-import { details } from "./Card.ts";
-import SearchBar from "./Components/SearchBar.tsx";
-import Button from "./Components/Button.tsx";
+import React from "react";
+import NavBar from "./Components/NavBar";
+import SearchBar from "./Components/SearchBar";
+import DataLoader from "./Components/DataLoader";
+import LoadingStatus from "./Components/LoadingStatus";
+import ErrorDisplay, { ErrorDisplayProps } from "./Components/ErrorDisplay";
+import DataDisplay, { Data } from "./Components/DataDisplay";
+import UserDetails from "./Components/UserDetails";
+import TextContent from "./Components/TextContent";
+import Button from "./Components/Button";
+import GithubIcon from "./Components/svg/GithubIcon";
+import { details } from "./Card";
 
-const App = () => {
+const App: React.FC = () => {
+  const data: Data | null = null; // Replace null with your data
+  const error: ErrorDisplayProps | null = null; // Replace null with your error
+
   return (
     <div className="app">
       <NavBar />
@@ -17,17 +26,19 @@ const App = () => {
         <SearchBar />
       </main>
 
-      {details.map((parameter) => {
-        return (
-          <section>
-            <div className="user-descrip">
-              <UserDetails data={parameter} />
-              <Button />
-            </div>
-            <TextContent data={parameter} />
-          </section>
-        );
-      })}
+      <DataLoader />
+      <LoadingStatus />
+      <DataDisplay data={data} />
+      <ErrorDisplay error={error} />
+      {details.map((parameter, index) => (
+        <section key={index}>
+          <div className="user-descrip">
+            <UserDetails data={parameter} />
+            <Button />
+          </div>
+          <TextContent data={parameter} />
+        </section>
+      ))}
 
       <footer>
         <p>Modul D</p>

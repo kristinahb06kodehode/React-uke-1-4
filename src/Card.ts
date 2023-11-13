@@ -1,4 +1,11 @@
-export const details = [
+export interface CardDetails {
+  name: string;
+  date: string;
+  title: string;
+  mainText: string;
+}
+
+export const details: CardDetails[] = [
   {
     name: "Kristina Heggø",
     date: "19 Mars 2023",

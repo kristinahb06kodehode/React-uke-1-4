@@ -1,3 +1,5 @@
+// ./Components/svg/GithubIcon.tsx
+
 export default function GithubIcon() {
   return (
     <div>

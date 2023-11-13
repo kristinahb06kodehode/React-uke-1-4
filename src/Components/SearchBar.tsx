@@ -1,3 +1,5 @@
+// ./Components/SearchBar.tsx
+
 import React from "react";
 
 const SearchBar: React.FC = () => {

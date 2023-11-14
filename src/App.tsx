@@ -4,6 +4,9 @@ import NavBar from "./Components/NavBar/NavBar";
 import { blogText } from "./Components/BlogPost/BlogText";
 import BlogList from "./Components/BlogPost/BlogList";
 import SearchBar from "./Components/NavBar/SearchBar";
+import GithubIcon from "./Components/GithubIcon.tsx";
+import { Layout } from "./pages/Layout";
+import { LandingPage } from "./pages/LandingPage";
 
 function App() {
   const [loading, setLoading] = useState(false);
@@ -41,6 +44,7 @@ function App() {
 
       <footer>
         <p>© Kodehode 2023</p>
+        <GithubIcon />
       </footer>
     </div>
   );

@@ -1,5 +1,4 @@
 import { useState } from "react";
-import Avatar from "./Avatar";
 
 export type BlogPostProps = {
   title: string;
@@ -25,20 +24,11 @@ export default function BlogPost(props: BlogPostProps) {
     <div>
       <section className="blog-post">
         <h2>{props.title}</h2>
-        <Avatar
-          size={95}
-          blogPostData={{
-            id: 1,
-            title: props.title,
-            content: props.initialContent,
-            additionalContent: props.additionalContent,
-          }}
-        />
+        <button className="like-button">Like</button>
         <p>{content}</p>
         <p className="read-more" onClick={toggleShowAdditionalContent}>
           {buttonText}
         </p>
-        <button className="like-button">Like</button>
       </section>
     </div>
   );

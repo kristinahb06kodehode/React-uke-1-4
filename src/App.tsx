@@ -24,7 +24,7 @@ const App: React.FC = () => {
     const fetchData = async () => {
       try {
         setLoading(true);
-        const response = await fetch("din-API-endepunkt-her");
+        const response = await fetch("https://http.cat/[status_code]");
         const result = await response.json();
         setData(result);
       } catch (error) {

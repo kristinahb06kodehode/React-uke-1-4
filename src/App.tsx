@@ -1,12 +1,14 @@
 import { useState } from "react";
 import "./App.css";
-import NavBar from "./Components/NavBar/NavBar";
+import NavBar from "./layout/Layout/NavBar.tsx";
 import { blogText } from "./Components/BlogPost/BlogText";
 import BlogList from "./Components/BlogPost/BlogList";
-import SearchBar from "./Components/NavBar/SearchBar";
+import SearchBar from "./Components/SearchBar.tsx";
 import GithubIcon from "./Components/GithubIcon.tsx";
-import { Layout } from "./pages/Layout";
-import { LandingPage } from "./pages/LandingPage";
+import { Layout } from "./pages/layout/Layout.tsx";
+import { LandingPage } from "./pages/landing/LandingPage.tsx";
+import NotFound from "./pages/notfound/NotFound.tsx";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
   const [loading, setLoading] = useState(false);
@@ -36,17 +38,29 @@ function App() {
   };
 
   return (
-    <div>
-      <NavBar>
-        <SearchBar onSearch={handleSearch} />
-      </NavBar>
-      <BlogList blogText={filteredBlogText} loading={loading} error={error} />
+    <BrowserRouter>
+      <Routes>
+        <Route path="src\pages\layout\Layout.tsx" element={<Layout />}>
+          <Route path="/" element={<LandingPage />} />
+          <Route path="/NotFound" element={<NotFound />} />
+        </Route>
+        <div>
+          <NavBar>
+            <SearchBar onSearch={handleSearch} />
+          </NavBar>
+          <BlogList
+            blogText={filteredBlogText}
+            loading={loading}
+            error={error}
+          />
 
-      <footer>
-        <p>© Kodehode 2023</p>
-        <GithubIcon />
-      </footer>
-    </div>
+          <footer>
+            <p>© Kodehode 2023</p>
+            <GithubIcon />
+          </footer>
+        </div>
+      </Routes>
+    </BrowserRouter>
   );
 }
 

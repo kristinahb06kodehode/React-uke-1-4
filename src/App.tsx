@@ -1,12 +1,12 @@
 import { useState } from "react";
 import "./App.css";
-import NavBar from "./layout/Layout/NavBar.tsx";
+import NavBar from "./pages/layout/Layout";
 import { blogText } from "./Components/BlogPost/BlogText";
 import BlogList from "./Components/BlogPost/BlogList";
 import SearchBar from "./Components/SearchBar.tsx";
 import GithubIcon from "./Components/GithubIcon.tsx";
-import { Layout } from "./pages/layout/Layout.tsx";
-import { LandingPage } from "./pages/landing/LandingPage.tsx";
+import Layout from "./pages/layout/Layout.tsx";
+import LandingPage from "./pages/landing/LandingPage.tsx";
 import NotFound from "./pages/notfound/NotFound.tsx";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
@@ -40,8 +40,8 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="src\pages\layout\Layout.tsx" element={<Layout />}>
-          <Route path="/" element={<LandingPage />} />
+        <Route path="src/pages/layout/Layout.tsx" element={<Layout>{}</Layout>}>
+          <Route index element={<LandingPage />} />
           <Route path="/NotFound" element={<NotFound />} />
         </Route>
         <div>

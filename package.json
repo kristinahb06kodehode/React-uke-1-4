@@ -7,7 +7,8 @@
     "start": "vite",
     "build": "tsc && vite build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "dev": "vite dev"
   },
   "dependencies": {
     "@dicebear/collection": "^7.0.1",

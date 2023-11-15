@@ -1,24 +1,25 @@
 import style from "./Layout.module.css";
 import React from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { Outlet, Link } from "react-router-dom";
-import { ReactNode } from "react";
 import GithubIcon from "../../Components/GithubIcon";
-type NavBarProps = {
-  children: ReactNode;
+type LayoutProps = {
+  children: React.ReactNode;
 };
 
-export default function NavBar({ children }: NavBarProps) {
+export default function Layout({ children }: LayoutProps) {
   return (
     <div>
       <header>
         <nav>
           <ul>
             <li>
-              <a href="#">Home</a>
+              <a href="#" className={style.navItem}>
+                Home
+              </a>
             </li>
             <li>
-              <a href="#">About</a>
+              <a href="#" className={style.navItem}>
+                About
+              </a>
             </li>
           </ul>
         </nav>

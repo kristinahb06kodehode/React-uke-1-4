@@ -1,6 +1,7 @@
 import style from "./AboutPage.module.css";
+import React from "react";
 
-export function AboutPage() {
+const AboutPage: React.FC = () => {
   return (
     <>
       <h2 className={style.heading}>This is me</h2>
@@ -24,4 +25,6 @@ export function AboutPage() {
       </p>
     </>
   );
-}
+};
+
+export default AboutPage;

@@ -1,4 +1,3 @@
-// LoadingStatus.tsx
 import React from "react";
 
 type LoadingStatusProps = {

@@ -1,30 +1,31 @@
 import style from "./Layout.module.css";
-import React from "react";
 import GithubIcon from "../../Components/GithubIcon";
-type LayoutProps = {
-  children: React.ReactNode;
-};
+import SearchBar from "../../Components/NavBar/SearchBar";
+import { blogText } from "../../Components/BlogPost/BlogText";
+import { Outlet, Link } from "react-router-dom";
 
-export default function Layout({ children }: LayoutProps) {
+export default function Layout() {
   return (
     <div>
-      <header>
-        <nav>
+      <header className={style.headerLayout}>
+        <nav className={style.navLayout}>
           <ul>
             <li>
-              <a href="#" className={style.navItem}>
-                Home
-              </a>
+              <Link to="/home">Home</Link>
             </li>
             <li>
-              <a href="#" className={style.navItem}>
-                About
-              </a>
+              <Link to="/about">About</Link>
             </li>
           </ul>
         </nav>
-        <div className="search-bar">{children}</div>
+        <SearchBar
+          onSearch={(searchTerm) => console.log(searchTerm)}
+          {...blogText}
+        />
       </header>
+
+      <Outlet />
+
       <footer>
         <p>© Kodehode 2023</p>
         <GithubIcon />

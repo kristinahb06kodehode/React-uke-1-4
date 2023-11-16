@@ -1,67 +1,23 @@
-import { useState } from "react";
-import "./App.css";
-import NavBar from "./pages/layout/Layout";
-import { blogText } from "./Components/BlogPost/BlogText";
-import BlogList from "./Components/BlogPost/BlogList";
-import SearchBar from "./Components/SearchBar.tsx";
-import GithubIcon from "./Components/GithubIcon.tsx";
-import Layout from "./pages/layout/Layout.tsx";
-import LandingPage from "./pages/landing/LandingPage.tsx";
-import NotFound from "./pages/notfound/NotFound.tsx";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
+import Landing from "./pages/landing/LandingPage";
+import Home from "./pages/home/Home";
+import About from "./pages/about/AboutPage";
+import NotFound from "./pages/notfound/NotFound";
+import Layout from "./pages/layout/Layout";
 
-function App() {
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState<string | null>(null);
-  const [filteredBlogText, setFilteredBlogText] = useState(blogText);
-
-  const handleSearch = (searchTerm: string) => {
-    try {
-      setLoading(true);
-
-      const filteredResults = blogText.filter((post) =>
-        (post.content + " " + post.additionalContent)
-          .toLowerCase()
-          .includes(searchTerm.toLowerCase())
-      );
-
-      setFilteredBlogText(filteredResults);
-    } catch (error) {
-      if (typeof error === "string") {
-        setError(error);
-      } else {
-        console.error(error);
-      }
-    } finally {
-      setLoading(false);
-    }
-  };
-
+const App: React.FC = () => {
   return (
-    <BrowserRouter>
+    <Router>
       <Routes>
-        <Route path="src/pages/layout/Layout.tsx" element={<Layout>{}</Layout>}>
-          <Route index element={<LandingPage />} />
-          <Route path="/NotFound" element={<NotFound />} />
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Landing />} />
+          <Route path="/home" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route element={<NotFound />} />
         </Route>
-        <div>
-          <NavBar>
-            <SearchBar onSearch={handleSearch} />
-          </NavBar>
-          <BlogList
-            blogText={filteredBlogText}
-            loading={loading}
-            error={error}
-          />
-
-          <footer>
-            <p>© Kodehode 2023</p>
-            <GithubIcon />
-          </footer>
-        </div>
       </Routes>
-    </BrowserRouter>
+    </Router>
   );
-}
+};
 
 export default App;

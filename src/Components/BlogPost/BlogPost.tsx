@@ -24,11 +24,11 @@ export default function BlogPost(props: BlogPostProps) {
     <div>
       <section className="blog-post">
         <h2>{props.title}</h2>
-        <button className="like-button">Like</button>
         <p>{content}</p>
         <p className="read-more" onClick={toggleShowAdditionalContent}>
           {buttonText}
         </p>
+        <button className="like-button">Like</button>
       </section>
     </div>
   );

@@ -1,7 +1,5 @@
-// ./Components/Button.tsx
-
 import React from "react";
-
+import "../../App.css";
 interface ButtonProps {
   likeButton?: string;
   onClick?: () => void;

@@ -16,6 +16,7 @@ export default function Layout() {
               </a>
             </li>
             <li>
+              {/* Husk å endre a href til link på resten */}
               <Link to="/about">About</Link>
             </li>
           </ul>

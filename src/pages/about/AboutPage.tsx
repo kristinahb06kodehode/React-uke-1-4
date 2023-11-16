@@ -1,7 +1,7 @@
 import style from "./AboutPage.module.css";
 import React from "react";
 
-const AboutPage: React.FC = () => {
+const About: React.FC = () => {
   return (
     <>
       <h2 className={style.heading}>This is me</h2>
@@ -27,4 +27,4 @@ const AboutPage: React.FC = () => {
   );
 };
 
-export default AboutPage;
+export default About;

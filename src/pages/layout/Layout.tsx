@@ -7,16 +7,13 @@ import { Outlet, Link } from "react-router-dom";
 export default function Layout() {
   return (
     <div>
-      <header>
-        <nav>
+      <header className={style.headerLayout}>
+        <nav className={style.navLayout}>
           <ul>
             <li>
-              <a href="/home/" className={style.navItem}>
-                Home
-              </a>
+              <Link to="/home">Home</Link>
             </li>
             <li>
-              {/* Husk å endre a href til link på resten */}
               <Link to="/about">About</Link>
             </li>
           </ul>

@@ -1,0 +1,74 @@
+/* LandingPage.module.css */
+
+.pageContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.hero {
+  background-color: #f8f8f8;
+  padding: 40px;
+  text-align: center;
+}
+
+.heading {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.subheading {
+  font-size: 1.2rem;
+  color: #555;
+}
+
+.ctaButton {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.featuredContent {
+  display: flex;
+  margin-top: 40px;
+}
+
+.featuredImage {
+  flex: 1;
+  background-image: url("path/to/your/image.jpg");
+  background-size: cover;
+  height: 300px; /* Adjust as needed */
+}
+
+.featuredText {
+  flex: 1;
+  padding: 20px;
+}
+
+.additionalInfo {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 40px;
+}
+
+.infoCard {
+  flex: 1;
+  background-color: #f8f8f8;
+  padding: 20px;
+  border-radius: 8px;
+  margin-right: 20px;
+}
+
+.infoCard h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.infoCard p {
+  font-size: 1rem;
+  color: #555;
+}

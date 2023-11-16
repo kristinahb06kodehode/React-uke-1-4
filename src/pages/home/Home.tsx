@@ -1,5 +1,4 @@
 import { useState } from "react";
-import "../App.css";
 
 import NavBar from "../../Components/NavBar/NavBar";
 import { blogText } from "../../Components/BlogPost/BlogText";

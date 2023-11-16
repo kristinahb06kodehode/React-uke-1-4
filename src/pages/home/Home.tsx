@@ -1,5 +1,5 @@
 import { useState } from "react";
-
+import style from "./Home.module.css";
 import NavBar from "../../Components/NavBar/NavBar";
 import { blogText } from "../../Components/BlogPost/BlogText";
 import BlogList from "../../Components/BlogPost/BlogList";
@@ -34,7 +34,7 @@ const Home: React.FC = () => {
   };
 
   return (
-    <div>
+    <div className={style.Home}>
       <NavBar>
         <SearchBar onSearch={handleSearch} />
       </NavBar>

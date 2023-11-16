@@ -1,9 +1,15 @@
-import style from "./LandingPage.module.css";
+import React from "react";
+import { Link } from "react-router-dom";
 
-export default function LandingPage() {
+const Landing: React.FC = () => {
   return (
-    <>
-      <h1 className={style.heading}>Kitty Central</h1>
-    </>
+    <div className="landing">
+      <h1>Welcome to the Tech Blog!</h1>
+      <Link to="/home">
+        <button className="cta.btn">Enter page!</button>
+      </Link>
+    </div>
   );
-}
+};
+
+export default Landing;

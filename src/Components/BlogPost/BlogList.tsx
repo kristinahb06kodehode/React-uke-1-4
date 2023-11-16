@@ -18,7 +18,7 @@ export type BlogPostInfo = {
 export default function BlogList({ blogText, loading, error }: BlogListProps) {
   return (
     <main>
-      <h1>Tech Blog</h1>
+      <h1>Kitty Central</h1>
 
       <LoadingStatus loading={loading} />
 

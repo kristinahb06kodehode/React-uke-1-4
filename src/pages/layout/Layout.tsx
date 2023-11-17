@@ -4,12 +4,17 @@ import SearchBar from "../../Components/NavBar/SearchBar";
 import { blogText } from "../../Components/BlogPost/BlogText";
 import { Outlet, Link } from "react-router-dom";
 
+// Define the Layout component as a functional component
 export default function Layout() {
   return (
+    // Main container for the layout
     <div>
+      {/* Header section with styling */}
       <header className={style.headerLayout}>
+        {/* Navigation section */}
         <nav className={style.navLayout}>
           <ul>
+            {/* Navigation links for Home and About pages */}
             <li>
               <Link to="/home">Home</Link>
             </li>
@@ -18,12 +23,14 @@ export default function Layout() {
             </li>
           </ul>
         </nav>
+        {/* SearchBar component with an example onSearch function and spread blogText props */}
         <SearchBar
           onSearch={(searchTerm) => console.log(searchTerm)}
           {...blogText}
         />
       </header>
 
+      {/* Outlet for rendering nested routes */}
       <Outlet />
 
       <footer>
